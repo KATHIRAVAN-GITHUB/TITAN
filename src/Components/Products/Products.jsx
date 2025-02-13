@@ -3,6 +3,7 @@ const Products = () => {
         <>
             <div className="2xl:container mx-auto py-10 mt-[30px]">
                 <div>
+                    
                     <p className="font-[Inter] font-bold text-[40px] leading-[42px] text-yellow-500 text-center p-8">Our Collections</p>
                 </div>
 
