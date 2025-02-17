@@ -6,12 +6,13 @@ const Navibar = () => {
       <section className="2xl:container mx-auto fixed top-0 left-0 w-full bg-white shadow-md z-50 h-[9%]">
         <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 p-4 gap-4">
           <div className="flex flex-row justify-between items-center">
-            <a
-              href="/"
-              className=" font-[Inter] font-bold text-[20px] leading-[36px] text-yellow-500"
-            >
-              TITAN
-            </a>
+
+            <Link
+                to="/"
+                className="font-[Inter] font-bold text-[20px] leading-[36px] text-yellow-500"
+              >
+                TITAN
+              </Link>
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,29 +67,33 @@ const Navibar = () => {
                         </a> */}
 
             <ul className="flex flex-col justify-end items-center md:flex-row gap-6">
-              <a href="/">
-                <li className="hover:bg-yellow-500 hover:rounded-lg p-2 list font-[Inter] font-bold text-[16px] leading-[24px]">
-                  HOME
-                </li>
-              </a>
-              <a href="/product">
-                <li className="hover:bg-yellow-500 hover:rounded-lg p-2 list font-[Inter] font-bold text-[16px] leading-[24px]">
-                  PRODUCTS
-                </li>
-              </a>
-              <a href="/about">
-                <li className="hover:bg-yellow-500 hover:rounded-lg p-2 list font-[Inter] font-bold text-[16px] leading-[24px]">
-                  ABOUT
-                </li>
-              </a>
-              <a href="/contact">
-                <li className="hover:bg-yellow-500 hover:rounded-lg p-2 list font-[Inter] font-bold text-[16px] leading-[24px]">
-                  CONTACT
-                </li>
-              </a>
-              <a href="/cart">
+              <Link
+                to="/"
+                className="hover:bg-yellow-500 hover:rounded-lg p-2 list font-[Inter] font-bold text-[16px] leading-[24px]"
+              >
+                HOME
+              </Link>
+              <Link
+                to="/product"
+                className="hover:bg-yellow-500 hover:rounded-lg p-2 list font-[Inter] font-bold text-[16px] leading-[24px]"
+              >
+                PRODUCT
+              </Link>
+              <Link
+                to="/about"
+                className="hover:bg-yellow-500 hover:rounded-lg p-2 list font-[Inter] font-bold text-[16px] leading-[24px]"
+              >
+                ABOUT
+              </Link>
+              <Link
+                to="/contact"
+                className="hover:bg-yellow-500 hover:rounded-lg p-2 list font-[Inter] font-bold text-[16px] leading-[24px]"
+              >
+                CONTACT
+              </Link>
+              <Link to="/cart">
                 <svg
-                  class="w-6 h-6 text-gray-800 dark:text-white" 
+                  className="w-6 h-6 text-gray-800 dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -98,13 +103,13 @@ const Navibar = () => {
                 >
                   <path
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
                   />
                 </svg>
-              </a>
+              </Link>
             </ul>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Cart = () => {
   return (
@@ -672,7 +673,6 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            
           </div>
           <div className="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
             <div className="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
@@ -686,7 +686,7 @@ const Cart = () => {
                       Original price
                     </dt>
                     <dd className="text-base font-medium text-gray-900 dark:text-white">
-                    ₹11,424.00
+                      ₹11,424.00
                     </dd>
                   </dl>
                   <dl className="flex items-center justify-between gap-4">
@@ -702,7 +702,7 @@ const Cart = () => {
                       Store Pickup
                     </dt>
                     <dd className="text-base font-medium text-gray-900 dark:text-white">
-                    ₹99.00
+                      ₹99.00
                     </dd>
                   </dl>
                   <dl className="flex items-center justify-between gap-4">
@@ -710,7 +710,7 @@ const Cart = () => {
                       Tax
                     </dt>
                     <dd className="text-base font-medium text-gray-900 dark:text-white">
-                    ₹799.00
+                      ₹799.00
                     </dd>
                   </dl>
                 </div>
@@ -719,25 +719,27 @@ const Cart = () => {
                     Total
                   </dt>
                   <dd className="text-base font-bold text-gray-900 dark:text-white">
-                  ₹10,227.00
+                    ₹10,227.00
                   </dd>
                 </dl>
               </div>
-              <a
-                href="/payment"
-                className="flex w-full items-center justify-center rounded-lg bg-[#BDA000] px-5 py-2.5 text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-primary-300 "
+
+              <Link
+                to="/payment"
+                className="flex w-full items-center justify-center rounded-lg bg-[#BDA000] px-5 py-2.5 text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-primary-300"
               >
                 Proceed to Checkout
-              </a>
+              </Link>
+
               <div className="flex items-center justify-center gap-2">
                 <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
                   {" "}
                   or{" "}
                 </span>
-                <a
-                  href="/"
-                  title=""
-                  className="inline-flex items-center gap-2 text-sm font-medium text-[#BDA000] underline hover:no-underline "
+
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[#BDA000] underline hover:no-underline"
                 >
                   Continue Shopping
                   <svg
@@ -755,7 +757,7 @@ const Cart = () => {
                       d="M19 12H5m14 0-4 4m4-4-4-4"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">

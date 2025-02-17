@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const HeroSection = () => {
   const images = [
@@ -15,7 +16,9 @@ const HeroSection = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + visibleCount) % images.length);
+      setCurrentIndex(
+        (prevIndex) => (prevIndex + visibleCount) % images.length
+      );
     }, 2000); // Slide every 3 seconds
 
     return () => clearInterval(interval);
@@ -33,13 +36,15 @@ const HeroSection = () => {
         />
         <div className="bg-content space-y-4">
           <h1 className="font-[Inter] font-extrabold text-center text-[50px] leading-[52px]">
-          Elevate Every Moment.
+            Elevate Every Moment.
           </h1>
-          <a href="/product">
-            <button className="transform transition duration-200 hover:scale-110 font-[Inter] font-medium text-center text-[20px] leading-[32px] p-2 border-yellow-500 border rounded-lg">
-              Shop Now
-            </button>
-          </a>
+          <Link
+            to="/product"
+            className="transform transition duration-200 hover:scale-110 font-[Inter] font-medium text-center text-[20px] leading-[32px] p-2 border-yellow-500 border rounded-lg"
+          >
+            SHOP NOW
+          </Link>
+          
         </div>
       </div>
 
@@ -47,7 +52,9 @@ const HeroSection = () => {
       <div className="carousel rounded-xl w-[75%] h-[80%] mx-auto  shadow-2xl overflow-hidden p-2">
         <div
           className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }}
+          style={{
+            transform: `translateX(-${currentIndex * (100 / visibleCount)}%)`,
+          }}
         >
           {images.map((img, index) => (
             <div key={index} className="carousel-item w-1/2 flex-shrink-0 px-2">

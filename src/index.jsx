@@ -12,6 +12,7 @@ import Review from "./Components/Review/Review.jsx";
 import { Children } from "react";
 import Cart from "./Components/Cart/Cart.jsx";
 import Payment from "./Components/Payment/Payment.jsx";
+import ProductDetail from "./Components/ProductDetail/ProductDetail.jsx";
 
 const AppLayout = () => {
   return (
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/payment",
         element: <Payment />,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductDetail />,
       },
     ],
     errorElement: <ErrorPage />,

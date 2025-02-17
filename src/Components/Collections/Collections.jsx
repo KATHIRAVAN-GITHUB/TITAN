@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router";
 
 const Collections = () => {
   const logos = [
@@ -80,8 +81,7 @@ const Collections = () => {
         <p className="font-[Inter] font-bold text-[40px] leading-[42px] text-yellow-500 text-center p-8">
           Featured Collections
         </p>
-        <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-
+        <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="transform transition duration-200 hover:scale-110 bg-white mx-auto shadow-xl p-6 space-y-2 rounded-xl border-black border h-[450px] w-[300px]">
             <img
               src="https://ik.imagekit.io/kathiravan/Watches/P-1.jpg"
@@ -98,31 +98,11 @@ const Collections = () => {
               <button className="flex flex-row items-center gap-1 fond-[Roboto] font-medium text-[18px] leading-[28px] text-black">
                 Rating - 4
               </button>
-              <button className="flex flex-row items-center gap-1 fond-[Roboto] font-medium text-[16px] leading-[21px] rounded-lg p-2 bg-[#BDA000] text-white">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-
-          <div className="transform transition duration-200 hover:scale-110 bg-white mx-auto shadow-xl p-6 space-y-2 rounded-lg border-black border h-[450px] w-[300px]">
-            <img
-              src="https://ik.imagekit.io/kathiravan/Watches/P-2.jpg"
-              alt="Card1 image"
-              className="rounded-lg mx-auto"
-            />
-            <p className="font-[Inter] font-normal text-[18px] leading-[22px] text-[#183A57]">
-              SQUARE DIAL Stainless Steel Analog Watch
-            </p>
-            <p className="flex flex-row items-center gap-1 fond-[Roboto] font-bold text-[20px] leading-[28px] text-black">
-              ₹750
-            </p>
-            <div className="flex flex-row justify-between gap-4">
-              <button className="flex flex-row items-center gap-1 fond-[Roboto] font-normal text-[18px] leading-[28px] text-black">
-                Rating - 4.5
-              </button>
-              <button className="flex flex-row items-center gap-1 fond-[Roboto] font-medium text-[16px] leading-[21px] rounded-lg p-2 bg-[#BDA000] text-white">
-                Add to Cart
-              </button>
+              <Link to="/product">
+                <button className="flex flex-row items-center gap-1 fond-[Roboto] font-medium text-[16px] leading-[21px] rounded-lg p-2 bg-[#BDA000] text-white">
+                  View List
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -142,9 +122,11 @@ const Collections = () => {
               <button className="flex flex-row items-center gap-1 fond-[Roboto] font-normal text-[18px] leading-[28px] text-black">
                 Rating - 4
               </button>
-              <button className="flex flex-row items-center gap-1 fond-[Roboto] font-medium text-[16px] leading-[21px] rounded-lg p-2 bg-[#BDA000] text-white">
-                Add to Cart
-              </button>
+              <Link to="/product">
+                <button className="flex flex-row items-center gap-1 fond-[Roboto] font-medium text-[16px] leading-[21px] rounded-lg p-2 bg-[#BDA000] text-white">
+                  View List
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -155,7 +137,7 @@ const Collections = () => {
               className="rounded-lg mx-auto"
             />
             <p className="font-[Inter] font-normal text-[18px] leading-[22px] text-[#183A57]">
-              Casio EDifice EFR-539SG-1AVUDF Chronograph 100M Water Resistant
+              Casio EDifice EFR-539SG-1AVUDF Chronograph
             </p>
             <p className="flex flex-row items-center gap-1 fond-[Roboto] font-bold text-[20px] leading-[28px] text-black">
               ₹2999
@@ -164,19 +146,23 @@ const Collections = () => {
               <button className="flex flex-row items-center gap-1 fond-[Roboto] font-normal text-[18px] leading-[28px] text-black">
                 Rating - 4
               </button>
-              <button className="flex flex-row items-center gap-1 fond-[Roboto] font-medium text-[16px] leading-[21px] rounded-lg p-2 bg-[#BDA000] text-white">
-                Add to Cart
-              </button>
+              <Link to="/product">
+                <button className="flex flex-row items-center gap-1 fond-[Roboto] font-medium text-[16px] leading-[21px] rounded-lg p-2 bg-[#BDA000] text-white">
+                  View List
+                </button>
+              </Link>
             </div>
           </div>
         </div>
 
         <div className="flex flex-row justify-center items-center mt-12">
-          <a href="/product">
-            <button className="transform transition duration-200 hover:scale-110 fond-[Inter] font-medium text-[16px] leading-[21px] rounded-lg p-4 bg-[#BDA000] text-white">
-              View More
-            </button>
-          </a>
+          <Link
+            to="/product"
+            className="transform transition duration-200 hover:scale-110 fond-[Inter] font-medium text-[16px] leading-[21px] rounded-lg p-4 bg-[#BDA000] text-white"
+          >
+            View More
+          </Link>
+          
         </div>
       </div>
     </>
