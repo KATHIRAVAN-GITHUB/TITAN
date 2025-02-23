@@ -6,13 +6,12 @@ const Navibar = () => {
       <section className="2xl:container mx-auto fixed top-0 left-0 w-full bg-white shadow-md z-50 h-[9%]">
         <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 p-4 gap-4">
           <div className="flex flex-row justify-between items-center">
-
             <Link
-                to="/"
-                className="font-[Inter] font-bold text-[20px] leading-[36px] text-yellow-500"
-              >
-                TITAN
-              </Link>
+              to="/"
+              className="font-[Inter] font-bold text-[20px] leading-[36px] text-yellow-500"
+            >
+              TITAN
+            </Link>
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,27 +44,6 @@ const Navibar = () => {
           </div>
 
           <div className="hidden md:block" id="content">
-            {/* <a href="https://kathiravan-82e32.web.app/">
-                            <button
-                                class="font-[Roboto] font-bold text-[16px] leading-[24px] text-[#183A57]">HOME
-                            </button>
-                        </a>
-                        <a href="#about">
-                            <button
-                                class="font-[Roboto] font-bold text-[16px] leading-[24px] text-[#183A57]">ABOUT
-                            </button>
-                        </a>
-                        <a href="#project">
-                            <button
-                                class="font-[Roboto] font-bold text-[16px] leading-[24px] text-[#183A57]">PROJECTS
-                            </button>
-                        </a>
-                        <a href="#contact">
-                            <button
-                                class="font-[Roboto] font-bold text-[16px] leading-[24px] text-[#183A57]">CONTACT
-                            </button>
-                        </a> */}
-
             <ul className="flex flex-col justify-end items-center md:flex-row gap-6">
               <Link
                 to="/"
@@ -92,60 +70,33 @@ const Navibar = () => {
                 CONTACT
               </Link>
               <Link to="/cart">
-                <svg
-                  className="w-6 h-6 text-gray-800 dark:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
-                  />
-                </svg>
+                <div className="flex flex-row hover:bg-yellow-500 p-2 mx-auto hover:rounded-lg">
+                  <svg
+                    className="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+                    />
+                  </svg>
+                  <p className="font-[Inter] font-bold text-[16px] leading-[24px]">
+                    CART
+                  </p>
+                </div>
               </Link>
             </ul>
           </div>
         </div>
       </section>
-
-      {/* <script>
-                let menuicon = document.getElementById("menuicon");
-                let crossicon = document.getElementById("crossicon");
-                let contentlist = document.getElementById("content");
-                let navlist = document.getElementsByClassName("list");
-
-                      menuicon.addEventListener("click", () => {
-                    menuicon.classList.toggle("hidden");
-                crossicon.classList.toggle("hidden");
-                contentlist.classList.toggle("hidden");
-                         // console.dir(menuicon);
-                       });
-
-                       crossicon.addEventListener("click", () => {
-                    menuicon.classList.toggle("hidden");
-                crossicon.classList.toggle("hidden");
-                contentlist.classList.toggle("hidden");
-                            // console.dir(menuicon);
-                         // console.dir(menuicon);
-                   })
-
-                for (let i = 0; i < navlist.length; i++) {
-                    navlist[i].addEventListener("click", () => {
-
-                        menuicon.classList.toggle("hidden");
-                        crossicon.classList.toggle("hidden");
-                        contentlist.classList.toggle("hidden");
-                    })
-                }
-            </script>
-            &lt;!&ndash;Navbar section ending&ndash;&gt; */}
     </>
   );
 };

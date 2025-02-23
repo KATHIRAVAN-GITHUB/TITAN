@@ -1,6 +1,6 @@
 import React from "react";
 
-const Payment = () => {
+const Payment = (props) => {
   return (
     <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
@@ -142,7 +142,7 @@ const Payment = () => {
                       Original price
                     </dt>
                     <dd className="text-base font-medium text-gray-900 dark:text-white">
-                      ₹11,424.00
+                      ₹10,000
                     </dd>
                   </dl>
                   <dl className="flex items-center justify-between gap-4">

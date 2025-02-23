@@ -1,45 +1,43 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
+import useFetchProductData from "../Hooks/useFetchProductData";
+import { ShimmerPostDetails } from "react-shimmer-effects";
+import useCart from "../Hooks/useCart";
 
 const ProductDetail = () => {
-  const data = useParams();
-  const [productData, setproductsdata] = useState([]);
-
-  useEffect(() => {
-    fetchProductData();
-  }, [data]);
-
-  const fetchProductData = async () => {
-    try {
-      const res = await fetch("http://localhost:2002/GetCardByid/" + data.id, {
-        method: "GET", // Since your backend expects a POST request
-        headers: { "Content-Type": "application/json" },
-      });
-
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-
-      const productsdata = await res.json();
-      setproductsdata(productsdata); // No need for data.GetCard, just set the array directly
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    }
-  };
+  const formatPrice = (num) => new Intl.NumberFormat("en-IN").format(num);
+  const { isLoading, productData } = useFetchProductData();
+  const {cart,addToCart} = useCart();
+  console.log(cart);
+  if (isLoading) {
+    return (
+      <>
+        <div className="2xl:container mx-auto py-10 mt-[30px]">
+          <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ShimmerPostDetails card cta variant="EDITOR" />
+          </div>
+        </div>
+      </>
+    );
+  }
   return (
     <section className="py-8 bg-white md:py-16 mt-[40px] dark:bg-gray-900 antialiased">
       <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
           <div className="shrink-0 max-w-md lg:max-w-lg mx-auto">
             <img
-              className="w-full dark:hidden"
-              src={productData.productimage}
+              className=" dark:hidden mx-auto h-[80%] w-[70%]"
+              src={`${
+                productData.productimage
+              }?timestamp=${new Date().getTime()}`}
               alt=""
             />
             <img
               className="w-full hidden dark:block"
-              src={productData.productimage}
+              src={`${
+                productData.productimage
+              }?timestamp=${new Date().getTime()}`}
               alt=""
             />
           </div>
@@ -49,7 +47,7 @@ const ProductDetail = () => {
             </h1>
             <div className="mt-4 sm:items-center sm:gap-4 sm:flex">
               <p className="text-2xl font-extrabold text-gray-900 sm:text-3xl dark:text-white">
-                ₹{productData.price}
+                ₹{formatPrice(productData.price)}
               </p>
               <div className="flex items-center gap-2 mt-2 sm:mt-0">
                 <div className="flex items-center gap-1">
@@ -112,43 +110,18 @@ const ProductDetail = () => {
                 <p className="text-sm font-medium leading-none text-gray-500 dark:text-gray-400">
                   (5.0)
                 </p>
-                <a
-                  href="#"
+
+                <Link
+                  to="/review"
                   className="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white"
                 >
-                  345 Reviews
-                </a>
+                  Reviews
+                </Link>
               </div>
             </div>
             <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-              <a
-                href="#"
-                title=""
-                className="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                role="button"
-              >
-                <svg
-                  className="w-5 h-5 -ms-2 me-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
-                  />
-                </svg>
-                Add to favorites
-              </a>
-              <a
-                href="#"
-                title=""
+              <p
+                onClick={()=>addToCart({...productData,quantity:1})}
                 className="text-white mt-4 sm:mt-0 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center"
                 role="button"
               >
@@ -170,7 +143,7 @@ const ProductDetail = () => {
                   />
                 </svg>
                 Add to cart
-              </a>
+              </p>
             </div>
             <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
             {/* <p className="mb-6 text-gray-500 dark:text-gray-400">

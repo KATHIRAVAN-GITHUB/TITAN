@@ -1,42 +1,22 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import { v4 as uuidv4 } from "uuid";
+import useFetchData from "../Hooks/useFetchData";
+import { ShimmerPostList } from "react-shimmer-effects";
 const Products = () => {
-  // const [data, setData] = useState([]);
+  const { isLoading,data } = useFetchData();
 
-  // useEffect(() => {
-  //   fetchProductData();
-  // }, []);
-
-  // const fetchProductData = async () => {
-  //   const res = await fetch("http://localhost:2002/GetCard");
-  //   const data = await res.json();
-  //   setData(data);
-  // };
-
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetchProductData();
-  }, []);
-
-  const fetchProductData = async () => {
-    try {
-      const res = await fetch("http://localhost:2002/GetCard", {
-        method: "POST", // Since your backend expects a POST request
-        headers: { "Content-Type": "application/json" },
-      });
-
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-
-      const data = await res.json();
-      setData(data); // No need for data.GetCard, just set the array directly
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    }
-  };
+  if (isLoading) {
+    return (
+      <>
+        <div className="2xl:container mx-auto py-10 mt-[30px]">
+          <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-[450px] w-[300px]">
+            <ShimmerPostList postStyle="STYLE_FOUR" col={3} row={3} gap={30} />
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>

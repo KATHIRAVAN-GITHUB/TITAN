@@ -8,6 +8,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
+    "start": "react-scripts start",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -17,7 +18,9 @@
     "@tailwindcss/vite": "^4.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-lazy-load-image-component": "^1.6.3",
     "react-router-dom": "^7.1.5",
+    "react-shimmer-effects": "^1.0.3",
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {

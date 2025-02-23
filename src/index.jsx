@@ -13,14 +13,17 @@ import { Children } from "react";
 import Cart from "./Components/Cart/Cart.jsx";
 import Payment from "./Components/Payment/Payment.jsx";
 import ProductDetail from "./Components/ProductDetail/ProductDetail.jsx";
+import CartProvider from "./Components/Store/cartStore.jsx";
 
 const AppLayout = () => {
   return (
     <>
-      <Navibar />
-      <Outlet />
-      {}
-      <Footer />
+      <CartProvider>
+        <Navibar />
+        <Outlet />
+        {}
+        <Footer />
+      </CartProvider>
     </>
   );
 };
