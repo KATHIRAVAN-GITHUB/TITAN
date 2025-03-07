@@ -936,7 +936,7 @@ const Review = () => {
           </div>
         </div>
       </section>
-      {/* Add review modal */}
+      Add review modal
       <div
         id="review-modal"
         tabIndex={-1}

@@ -86,7 +86,7 @@ const Collections = () => {
             <img
               src="https://ik.imagekit.io/kathiravan/Watches/P-1.jpg"
               alt="Card1 image"
-              className="rounded-lg mx-auto"
+              className="rounded-lg mx-auto h-[60%]"
             />
             <p className="font-[Inter] font-medium text-[18px] leading-[22px] text-[#183A57]">
               TIMEWEAR New Track

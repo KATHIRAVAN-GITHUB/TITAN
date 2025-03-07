@@ -41,11 +41,11 @@ const Products = () => {
             );
           })}
 
-          {/* <div className="transform transition duration-200 hover:scale-105 bg-white mx-auto shadow-xl p-6 space-y-2 rounded-lg border-black border h-[450px] w-[300px]">
+          <div className="transform transition duration-200 hover:scale-105 bg-white mx-auto shadow-xl p-6 space-y-2 rounded-lg border-black border h-[450px] w-[300px]">
             <img
               src="https://ik.imagekit.io/kathiravan/Watches/P-1.jpg"
               alt="Card1 image"
-              className="rounded-lg mx-auto"
+              className="rounded-lg mx-auto h-[60%]"
             />
             <p className="font-[Inter] font-normal text-[18px] leading-[22px] text-[#183A57]">
               TIMEWEAR New Track
@@ -67,7 +67,7 @@ const Products = () => {
             <img
               src="https://ik.imagekit.io/kathiravan/Watches/P-2.jpg"
               alt="Card1 image"
-              className="rounded-lg mx-auto"
+              className="rounded-lg mx-auto h-[60%]"
             />
             <p className="font-[Inter] font-normal text-[18px] leading-[22px] text-[#183A57]">
               SQUARE DIAL Stainless Steel Analog Watch
@@ -89,7 +89,7 @@ const Products = () => {
             <img
               src="https://ik.imagekit.io/kathiravan/Watches/P-3.jpg"
               alt="Card1 image"
-              className="rounded-lg mx-auto"
+              className="rounded-lg mx-auto h-[60%]"
             />
             <p className="font-[Inter] font-normal text-[18px] leading-[22px] text-[#183A57]">
               Fastrack Astor FR2 Pro Smart Watch
@@ -111,7 +111,7 @@ const Products = () => {
             <img
               src="https://ik.imagekit.io/kathiravan/Watches/P-4.jpg"
               alt="Card1 image"
-              className="rounded-lg mx-auto h-[250px] w-[300px]"
+              className="rounded-lg mx-auto h-[60%]"
             />
             <p className="font-[Inter] font-normal text-[18px] leading-[22px] text-[#183A57]">
               Casio EDifice EFR-539SG-1AVUDF Chronograph 100M Water Resistant
@@ -217,7 +217,7 @@ const Products = () => {
                 Add to Cart
               </button>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </>

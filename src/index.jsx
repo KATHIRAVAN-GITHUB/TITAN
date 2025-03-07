@@ -14,6 +14,8 @@ import Cart from "./Components/Cart/Cart.jsx";
 import Payment from "./Components/Payment/Payment.jsx";
 import ProductDetail from "./Components/ProductDetail/ProductDetail.jsx";
 import CartProvider from "./Components/Store/cartStore.jsx";
+import Orders from "./Components/Orders/Orders.jsx";
+import ProductUpload from "./Components/ProductUpload/ProductUpload.jsx";
 
 const AppLayout = () => {
   return (
@@ -69,6 +71,14 @@ const router = createBrowserRouter([
       {
         path: "/payment",
         element: <Payment />,
+      },
+      {
+        path: "/orders",
+        element: <Orders />,
+      },
+      {
+        path: "/upload",
+        element: <ProductUpload />,
       },
       {
         path: "/product/:id",
