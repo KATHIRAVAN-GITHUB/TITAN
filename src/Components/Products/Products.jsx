@@ -41,7 +41,7 @@ const Products = () => {
             );
           })}
 
-          <div className="transform transition duration-200 hover:scale-105 bg-white mx-auto shadow-xl p-6 space-y-2 rounded-lg border-black border h-[450px] w-[300px]">
+          {/* <div className="transform transition duration-200 hover:scale-105 bg-white mx-auto shadow-xl p-6 space-y-2 rounded-lg border-black border h-[450px] w-[300px]">
             <img
               src="https://ik.imagekit.io/kathiravan/Watches/P-1.jpg"
               alt="Card1 image"
@@ -217,7 +217,7 @@ const Products = () => {
                 Add to Cart
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
