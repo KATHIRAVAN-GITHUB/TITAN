@@ -11,9 +11,10 @@ const useFetchData = () => {
   const fetchProductData = async () => {
     try {
       setisloading(true);
-      const res = await fetch("http://localhost:2002/GetCard", {
+      const res = await fetch("https://titan-api-ffre.onrender.com/GetCard", {
         method: "POST", // Since your backend expects a POST request
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "true" },
       });
 
       if (!res.ok) {
@@ -29,7 +30,7 @@ const useFetchData = () => {
     }
   };
 
-  return { data };
+  return { data,isLoading };
 };
 
 export default useFetchData;

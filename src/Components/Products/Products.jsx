@@ -3,6 +3,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import { v4 as uuidv4 } from "uuid";
 import useFetchData from "../Hooks/useFetchData";
 import { ShimmerPostList } from "react-shimmer-effects";
+// import {LifeLine} from "LifeLine";
 const Products = () => {
   const { isLoading,data } = useFetchData();
 
@@ -10,10 +11,11 @@ const Products = () => {
     return (
       <>
         <div className="2xl:container mx-auto py-10 mt-[30px]">
-          <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-[450px] w-[300px]">
-            <ShimmerPostList postStyle="STYLE_FOUR" col={3} row={3} gap={30} />
+          <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 h-[450px] w-[300px]">
+            <ShimmerPostList postStyle="STYLE_FOUR" col={3} row={2} gap={30} />
           </div>
         </div>
+        {/* <LifeLine color="#32cd32" size="medium" text="" textColor="" /> */}
       </>
     );
   }

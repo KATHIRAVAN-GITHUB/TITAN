@@ -13,9 +13,10 @@ const useFetchProductData = () => {
   const fetchProductData = async () => {
     try {
       setisloading(true);
-      const res = await fetch("http://localhost:2002/GetCardByid/" + data.id, {
+      const res = await fetch("https://titan-api-ffre.onrender.com/GetCardByid/" + data.id, {
         method: "GET", // Since your backend expects a POST request
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "true" },
       });
 
       if (!res.ok) {
