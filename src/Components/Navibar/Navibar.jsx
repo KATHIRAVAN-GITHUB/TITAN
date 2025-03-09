@@ -20,7 +20,7 @@ const Navibar = () => {
 
   return (
     <>
-      <section className="2xl:container mx-auto fixed top-0 left-0 w-full bg-white shadow-md z-50 h-[9%]">
+      <section className="2xl:container mx-auto fixed top-0 left-0 w-full bg-white shadow-md z-50">
         <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 p-4 gap-4">
           <div className="flex flex-row justify-between items-center">
             <Link
