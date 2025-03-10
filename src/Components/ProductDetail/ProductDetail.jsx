@@ -13,10 +13,10 @@ const ProductDetail = () => {
   if (isLoading) {
     return (
       <>
-        <div className="2xl:container mx-auto py-10 mt-[30px]">
-          <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="2xl:container mx-auto p-40 mt-[30px]">
+          {/* <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> */}
             <ShimmerPostDetails card cta variant="EDITOR" />
-          </div>
+          {/* </div> */}
         </div>
       </>
     );
